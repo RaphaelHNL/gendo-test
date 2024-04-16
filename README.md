@@ -6,7 +6,7 @@ Esse projeto foi feito utilizando Angular versão 15.2.10.
 E necessário ter o angular/cli na versão 15.2.10 e também o node na versão 14.20.1.
 
 ## Rodando o projeto
-Para rodar o projeto, basta acessar a pasta raiz e rodar no terminar "npm run start", e após isso abrir no navegador o link: http://localhost:4200/
+Para rodar o projeto, basta acessar a pasta raiz e rodar no terminal o comando "npm install", após concluir a instalação do node_modules rode o comando "npm run start", e após isso abrir no navegador o link: http://localhost:4200/
 
 
 ## Rodando os testes unitários 
