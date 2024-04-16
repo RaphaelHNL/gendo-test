@@ -15,9 +15,9 @@ Para rodar os testes unitários, basta rodar o comando "npm run test" na pasta r
 
 
 ## Alterar Personal Access token github
-Para alterar o Personal Access token do github para as chamadas de api, basta abrir o console do navegador apertando a tecla F12 e acessar a aba console, após isso digite no console do navegador "window.sessionStorage.setItem('token','seu personal access token github')".
+Para alterar o Personal Access token do github para as chamadas de api, basta abrir o console do navegador apertando a tecla F12 e acessar a aba console, após isso digite no console do navegador "window.sessionStorage.setItem('token','seu personal access token github')", recarregue a página apertando F5 para entrar a atualização do token.
 Para configurar um Personal Access token, acesse: https://docs.github.com/pt/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens 
 
 ## Alterar usuário de pesquisa no github
-Para alterar o usuário de pesquisa nas API'S do github , basta abrir o console do navegador apertando a tecla F12 e acessar a aba console, após isso digite no console do navegador "window.sessionStorage.setItem('user','nome usuário')".
+Para alterar o usuário de pesquisa nas API'S do github , basta abrir o console do navegador apertando a tecla F12 e acessar a aba console, após isso digite no console do navegador "window.sessionStorage.setItem('user','nome usuário')", recarregue a página apertando F5 para entrar a atualização do usuário.
 
