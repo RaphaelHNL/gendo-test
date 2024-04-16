@@ -27,9 +27,9 @@
 
 
         <app-search-repo-starred *ngIf="starOrLanguage; else starred" [repositoriesOrStarred]="StarredArray"
-            [showStarOrLanguage]="starOrLanguage" [showError]="haveError"></app-search-repo-starred>
+            [showStarOrLanguage]="starOrLanguage" [showErrorToken]="haveError" [showErrorUser]="userNotExist"></app-search-repo-starred>
 
         <ng-template #starred><app-search-repo-starred [repositoriesOrStarred]="StarredArray"
-                [showStarOrLanguage]="starOrLanguage" [showError]="haveError"></app-search-repo-starred></ng-template>
+                [showStarOrLanguage]="starOrLanguage" [showErrorToken]="haveError" [showErrorUser]="userNotExist"></app-search-repo-starred></ng-template>
     </div>
 </div>

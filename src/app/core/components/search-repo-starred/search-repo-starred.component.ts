@@ -9,7 +9,8 @@ import { GithubService } from '../../services/github.service';
 export class SearchRepoStarredComponent {
   @Input() repositoriesOrStarred: any;
   @Input() showStarOrLanguage: boolean = true;
-  @Input() showError: boolean = false;
+  @Input() showErrorToken: boolean = false;
+  @Input() showErrorUser: boolean = false;
   starredReposFiltered: any = [];
 
   constructor(private githubService: GithubService) {

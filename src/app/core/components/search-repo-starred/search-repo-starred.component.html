@@ -21,10 +21,16 @@
         <hr *ngIf="!last"/>
     </div>
 
-    <div class="error" *ngIf="showError">
+    <div class="error" *ngIf="showErrorToken">
         <p>Você atingiu o limite de acesso a API do Github sem o seu personal access token.</p>
         <p>Para setar o seu token, basta abrir o console do navegador apertando a tecla F12 e indo na aba do console e digitar "window.sessionStorage.setItem('token','seu personal access token github')", após fazer isso, recarregue a página com F5.</p>
 
         <p>Caso não tenha um Personal access token, configure um atraves do tutorial do <a target="_blank" href="https://docs.github.com/pt/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">github.</a></p>
+    </div>
+
+
+    <div class="error" *ngIf="showErrorUser">
+        <p>Usuário não existe no github!</p>
+        <p>Para pesquisar outro usuário do github, basta abrir o console do navegador apertando a tecla F12 e indo na aba do console e digitar "window.sessionStorage.setItem('user','nome usuário')", após fazer isso, recarregue a página com F5.</p>
     </div>
 

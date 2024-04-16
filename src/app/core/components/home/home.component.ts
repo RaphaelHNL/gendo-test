@@ -18,6 +18,7 @@ export class HomeComponent {
   starOrLanguage: boolean = true;
   userGithubSearch = '';
   haveError: boolean = false;
+  userNotExist: boolean = false;
   changeUser = window.sessionStorage.getItem('user');
   constructor(private githubService: GithubService) {
     if (this.changeUser) {
@@ -38,9 +39,14 @@ export class HomeComponent {
     this.githubService.get('users/' + this.userGithubSearch).subscribe((userDesc: any) => {
       this.user = userDesc;
       this.haveError = false;
+      this.userNotExist = false;
     },
       (error) => {
-        this.haveError = true;
+        if(error.status === 403){
+          this.haveError = true;
+        }else if(error.status === 404){
+          this.userNotExist = true;
+        }
       }
     )
   }
@@ -50,9 +56,14 @@ export class HomeComponent {
     this.githubService.get(`users/${this.userGithubSearch}/repos`).subscribe((repos: any) => {
       this.repositoriesArray = repos;
       this.haveError = false;
+      this.userNotExist = false;
     },
       (error) => {
-        this.haveError = true;
+        if(error.status === 403){
+          this.haveError = true;
+        }else if(error.status === 404){
+          this.userNotExist = true;
+        }
       })
   }
 
@@ -69,9 +80,16 @@ export class HomeComponent {
     this.githubService.get(`users/${this.userGithubSearch}/starred`).subscribe((Starred: any) => {
       this.StarredArray = Starred;
       this.haveError = false;
+      this.userNotExist = false;
     },
       (error) => {
-        this.haveError = true;
+        console.log(error)
+        if(error.status === 403){
+          this.haveError = true;
+        }else if(error.status === 404){
+          this.userNotExist = true;
+        }
+        
       })
   }
 

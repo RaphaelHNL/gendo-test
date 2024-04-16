@@ -56,14 +56,24 @@ fdescribe('HomeComponent', () => {
   });
 
 
-  it('deve setar haveError como true se ocorrer um erro na chamada da api do user', () => {
-    const error = new Error('Error fetching users');
+  it('deve setar haveError como true se a requisão falhar com status 403 na chamada da função searchUser', () => {
+    const error = { status: 403 };
     mockGithubService.get.and.returnValue(throwError(error));
 
     component.searchUser();
 
     expect(component.haveError).toBeTruthy();
   });
+
+  it('deve setar userNotExist como true se a requisão falhar com status 404 na chamada da função searchUser', () => {
+    const error = { status: 404 };
+    mockGithubService.get.and.returnValue(throwError(error));
+
+    component.searchUser();
+
+    expect(component.userNotExist).toBeTruthy();
+  });
+
 
 
   it('deve chamar a função searchRepository', () => {
@@ -85,13 +95,22 @@ fdescribe('HomeComponent', () => {
   });
 
 
-  it('deve setar haveError como true se ocorrer um erro na chamada da api do repos', () => {
-    const error = new Error('Error fetching repositories');
+  it('deve setar haveError como true se a requisão falhar com status 403 na chamada da função searchRepository', () => {
+    const error = { status: 403 };
     mockGithubService.get.and.returnValue(throwError(error));
 
     component.searchRepository();
 
     expect(component.haveError).toBeTruthy();
+  });
+
+  it('deve setar userNotExist como true se a requisão falhar com status 404 na chamada da função searchRepository', () => {
+    const error = { status: 404 };
+    mockGithubService.get.and.returnValue(throwError(error));
+
+    component.searchRepository();
+
+    expect(component.userNotExist).toBeTruthy();
   });
 
 
@@ -129,12 +148,21 @@ fdescribe('HomeComponent', () => {
   });
 
 
-  it('deve setar haveError como true se ocorrer um erro na chamada da api do starred', () => {
-    const error = new Error('Error fetching users');
+  it('deve setar haveError como true se a requisão falhar com status 403 na chamada da função searchStarred', () => {
+    const error = { status: 403 };
     mockGithubService.get.and.returnValue(throwError(error));
 
     component.searchStarred();
 
     expect(component.haveError).toBeTruthy();
+  });
+
+  it('deve setar userNotExist como true se a requisão falhar com status 404 na chamada da função searchStarred', () => {
+    const error = { status: 404 };
+    mockGithubService.get.and.returnValue(throwError(error));
+
+    component.searchStarred();
+
+    expect(component.userNotExist).toBeTruthy();
   });
 });
