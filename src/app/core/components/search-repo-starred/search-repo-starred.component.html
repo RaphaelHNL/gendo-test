@@ -1,0 +1,30 @@
+<div class="container-filter">
+    <input type="search" placeholder="&#xf002; Filter by name" (keydown)="filter($event)">
+</div>
+    <div *ngFor="let starred of starredReposFiltered; let last = last">
+        <div class="card-container"> 
+            <h2>{{showStarOrLanguage ? '' : starred.owner.login + ' /'}}  <span style="font-weight: bold;">{{starred.name}}</span></h2>
+            <p>{{starred.description}}</p>
+            <div class="container-star-share">
+                
+                <div class="container-star-code">
+                    <img  [src]="showStarOrLanguage ? '../../../../assets/img/code-simple.svg' : '../../../../assets/img/star.svg'" [alt]="showStarOrLanguage ? 'icone code simple' : 'icone estrela'"/>
+                    <p>{{showStarOrLanguage ? starred.stargazers_count : starred.language}}</p>
+                </div>
+                <div class="container-star-code">
+                    <img alt="icone git branch" src="../../../../assets/img/git-branch.svg"/>
+                    <p>{{starred.forks}}</p>
+                </div>
+                
+            </div>
+        </div>
+        <hr *ngIf="!last"/>
+    </div>
+
+    <div class="error" *ngIf="showError">
+        <p>Você atingiu o limite de acesso a API do Github sem o seu personal access token.</p>
+        <p>Para setar o seu token, basta abrir o console do navegador apertando a tecla F12 e indo na aba do console e digitar "window.sessionStorage.setItem('token','seu personal access token github')", após fazer isso, recarregue a página com F5.</p>
+
+        <p>Caso não tenha um Personal access token, configure um atraves do tutorial do <a target="_blank" href="https://docs.github.com/pt/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">github.</a></p>
+    </div>
+

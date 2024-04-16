@@ -1,0 +1,35 @@
+<div class="header">
+    <img src="../../../../assets/img/github-icon.svg" />
+    <p>Github <span>profiles</span></p>
+</div>
+<div class="container">
+
+    <div class=" container-user">
+        <img alt="Foto perfil usuário github" [src]="user.avatar_url">
+        <div>
+            <h1>{{user.name}}</h1>
+            <p>{{user.bio}}</p>
+        </div>
+
+    </div>
+
+    <div class="container-search">
+        <div class=" container-button">
+            <a [ngClass]="starOrLanguage ? 'button-border-orange' : ''" (click)="changeTab('repos')">Repos <p>
+                    <span>{{StarredArray.length}}</span>
+                </p></a>
+            <a [ngClass]="!starOrLanguage ? 'button-border-orange' : ''" (click)="changeTab('starred')">Starred <p>
+                    <span>{{StarredArray.length}}</span>
+                </p></a>
+        </div>
+        <hr>
+
+
+
+        <app-search-repo-starred *ngIf="starOrLanguage; else starred" [repositoriesOrStarred]="StarredArray"
+            [showStarOrLanguage]="starOrLanguage" [showError]="haveError"></app-search-repo-starred>
+
+        <ng-template #starred><app-search-repo-starred [repositoriesOrStarred]="StarredArray"
+                [showStarOrLanguage]="starOrLanguage" [showError]="haveError"></app-search-repo-starred></ng-template>
+    </div>
+</div>

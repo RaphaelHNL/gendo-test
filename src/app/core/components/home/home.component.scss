@@ -1,0 +1,154 @@
+$slate-grey: #5C646D;
+$rusty-orange: #E36209;
+$brownish-grey: #666666;
+$warm-grey: #999999;
+$white: #FFFFFF;
+$pale-grey: #E1E4E8;
+$white-two: #E3E3E3;
+$slate-grey-two: #586069;
+
+$open-sans-family: 'OpenSans';
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    background-color: #24292E;
+    padding: 8px 30px 8px 30px;
+
+    img {
+        width: 30px;
+        margin-right: 10px;
+
+    }
+
+    ;
+
+    p {
+        font-size: 20px;
+        font-weight: bold;
+        color: $white;
+
+        span {
+            font-weight: normal;
+        }
+    }
+}
+
+
+
+.container-user {
+    padding: 8px 30px 8px 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+
+    img {
+        width: 90px;
+        height: 90px;
+        margin-right: 10px;
+        border-radius: 100%
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    p {
+        margin-top: 0px;
+    }
+}
+
+.container-button {
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        background: none;
+        border: none;
+        width: 50%;
+        font-size: 20px;
+        color: #5C646D;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 0px 8px 8px;
+
+        p {
+            background-color: #E3E3E3;
+            margin: 0px;
+            width: 27px;
+            margin-left: 2px;
+            text-align: center;
+            border-radius: 10px;
+
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .button-border-orange {
+        font-weight: bold;
+        border-bottom: 3px solid #E36209;
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .container-button {
+        justify-content: start;
+
+        a {
+            width: 28%;
+        }
+
+
+    }
+
+
+
+
+}
+
+@media only screen and (min-width: 992px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+        .container-user {
+            flex-direction: column;
+            text-align: center;
+
+            img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        .container-search {
+            margin-top: 35px;
+
+            .container-button {
+                justify-content: start;
+
+                a {
+                    width: 28%;
+                }
+
+
+            }
+        }
+
+
+    }
+
+}
