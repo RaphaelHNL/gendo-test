@@ -1,27 +1,23 @@
 # GendoTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.10.
+Esse projeto foi feito utilizando Angular versão 15.2.10.
 
-## Development server
+## Tecnologias necessárias para rodar o projeto
+E necessário ter o angular/cli na versão 15.2.10 e também o node na versão 14.20.1.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Rodando o projeto
+Para rodar o projeto, basta acessar a pasta raiz e rodar no terminar "npm run start", e após isso abrir no navegador o link: http://localhost:4200/
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Rodando os testes unitários 
 
-## Build
+Para rodar os testes unitários, basta rodar o comando "npm run test" na pasta raiz do projeto.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Alterar Personal Access token github
+Para alterar o Personal Access token do github para as chamadas de api, basta abrir o console do navegador apertando a tecla F12 e acessar a aba console, após isso digite no console do navegador "window.sessionStorage.setItem('token','seu personal access token github')".
+Para configurar um Personal Access token, acesse: https://docs.github.com/pt/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Alterar usuário de pesquisa no github
+Para alterar o usuário de pesquisa nas API'S do github , basta abrir o console do navegador apertando a tecla F12 e acessar a aba console, após isso digite no console do navegador "window.sessionStorage.setItem('user','nome usuário')".
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
